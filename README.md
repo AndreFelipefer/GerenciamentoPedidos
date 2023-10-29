@@ -15,9 +15,10 @@ Tabela Clientes:
 ![image](https://github.com/AndreFelipefer/GerenciamentoPedidos/assets/129207232/274faf19-0515-472f-a641-612a4d028d25)
 
 <hr> 
-# Etapa 2: Criação de Stored Procedure
 
-### Crie uma stored procedure chamada "InserirPedido" que permite inserir um novo pedido na tabela "Pedidos" com as informações apropriadas. A stored procedure deve receber parâmetros como o ID do cliente e os detalhes do pedido. Ao término teste o funcionamento da stored procedure criada inserindo um pedido.
+### Etapa 2: Criação de Stored Procedure
+
+Crie uma stored procedure chamada "InserirPedido" que permite inserir um novo pedido na tabela "Pedidos" com as informações apropriadas. A stored procedure deve receber parâmetros como o ID do cliente e os detalhes do pedido. Ao término teste o funcionamento da stored procedure criada inserindo um pedido.
 ```SQL
 DELIMITER $$
 
@@ -42,9 +43,10 @@ DELIMITER ;
 ```
 
 <hr>
-# Etapa 3: Trigger
 
-### Crie uma trigger que seja acionada APÓS a inserção de um novo pedido na tabela "Pedidos". A trigger deve calcular o valor total dos pedidos para o cliente correspondente e atualizar um campo "TotalPedidos" na tabela "Clientes" com o valor total. Teste a Trigger inserindo um novo pedido na tabela "Pedidos“.
+### Etapa 3: Trigger
+
+Crie uma trigger que seja acionada APÓS a inserção de um novo pedido na tabela "Pedidos". A trigger deve calcular o valor total dos pedidos para o cliente correspondente e atualizar um campo "TotalPedidos" na tabela "Clientes" com o valor total. Teste a Trigger inserindo um novo pedido na tabela "Pedidos“.
 ```SQL
 DELIMITER $$
 
@@ -61,9 +63,10 @@ DELIMITER ;
 
 ```
 <hr>
-# Etapa 4: View
 
-### Crie uma view chamada "PedidosClientes" que combina informações das tabelas "Clientes" e "Pedidos" usando JOIN para mostrar os detalhes dos pedidos e os nomes dos clientes.
+###  Etapa 4: View
+
+Crie uma view chamada "PedidosClientes" que combina informações das tabelas "Clientes" e "Pedidos" usando JOIN para mostrar os detalhes dos pedidos e os nomes dos clientes.
 
 ```SQL
 CREATE VIEW PedidosClientes AS
@@ -78,9 +81,9 @@ INNER JOIN clientes c ON p.Clientes_idClientes = c.idClientes;
 
 ```
 <hr>
-#Etapa 5: Consulta com JOIN
+### Etapa 5: Consulta com JOIN
 
-### Escreva uma consulta SQL que utiliza JOIN para listar os detalhes dos pedidos de cada cliente, incluindo o nome do cliente e o valor total de seus pedidos. Utilize a view "PedidosClientes" para essa consulta.
+Escreva uma consulta SQL que utiliza JOIN para listar os detalhes dos pedidos de cada cliente, incluindo o nome do cliente e o valor total de seus pedidos. Utilize a view "PedidosClientes" para essa consulta.
 ```SQL
 ALTER TABLE clientes
 ADD COLUMN TotalPedidos DECIMAL(10, 2) DEFAULT 0.00;
